@@ -46,7 +46,7 @@ function Search({
 				Search
 			</button>
 		</div>
-	</section>;
+	</section>
     </>
 }
 
