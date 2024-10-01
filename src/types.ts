@@ -5,7 +5,7 @@ export type OptionsType = {
   lon: number;
 };
 
-export type forecastType = {
+export type ForecastType = {
   name: string;
   country: string;
   list: [
