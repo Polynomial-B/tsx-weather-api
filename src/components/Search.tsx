@@ -19,7 +19,7 @@ function Search({
 }: SearchProps) : JSX.Element {
 
     return <>
-	<section className="bg-white bg-opacity-10 backdrop-blur-1g rounded drop-shadow-lg w-full md:max-w-[500px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[500px] text-slate-800 text-opacity-75">
+	<section className="rounded drop-shadow-lg w-full md:max-w-[500px] p-4 flex flex-col text-center items-center justify-center md:px-10 lg:p-24 h-full lg:h-[500px] text-slate-800 text-opacity-75">
 		<h1 className="text-4xl font-thin">Weather App</h1>
 		<p className="text-sm mt-10 mb-5">Choose a location:</p>
 		<div className="flex items-center justify-center relative">
