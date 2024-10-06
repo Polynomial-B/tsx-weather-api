@@ -43,7 +43,6 @@ function App() {
 				const forecastData = structuredClone(data);
 
 				setWeatherForecast(forecastData);
-				// console.log(forecastData);
 			});
 	}
 
