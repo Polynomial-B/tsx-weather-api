@@ -17,7 +17,7 @@ function App() {
 
 	function getLocations(options: string) {
 		fetch(
-			`http://api.openweathermap.org/geo/1.0/direct?q=${options.trim()}&limit=5&appid=${API_KEY}`
+			`http://api.openweathermap.org/geo/1.0/direct?q=${options.trim()}&lang=en&limit=5&appid=${API_KEY}`
 		)
 			.then((res) => res.json())
 			.then((data) => setOptions(data));
@@ -36,13 +36,14 @@ function App() {
 
 	function getForecast(city: OptionsType) {
 		fetch(
-			`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=standard&appid=${API_KEY}`
+			`https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${API_KEY}`
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				const forecastData = structuredClone(data.city);
+				const forecastData = structuredClone(data);
 
 				setWeatherForecast(forecastData);
+				// console.log(forecastData);
 			});
 	}
 
