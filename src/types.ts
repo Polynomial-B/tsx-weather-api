@@ -6,8 +6,10 @@ export type OptionsType = {
 };
 
 export type ForecastType = {
-  name: string;
-  country: string;
+  city: {
+    name: string;
+    country: string;
+  };
   list: [
     {
       dt: number;
