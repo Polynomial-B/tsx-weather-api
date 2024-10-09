@@ -63,7 +63,7 @@ function App() {
 
 	return (
 		<>
-			<main className="flex justify-center items-center bg-gradient-to-br from-pink-600 via-fuschia-600 to-purple-600 h-[100vh] w-full">
+			<main className="flex justify-center items-center bg-gradient-to-br from-pink-600 via-fuschia-600 to-purple-600 min-h-[100vh] w-full">
 				{weatherForecast ? (
 					<Forecast data={weatherForecast} />
 				) : (

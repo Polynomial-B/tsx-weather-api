@@ -55,7 +55,7 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 						<div>
 							<h2 className="py-4 capitalize">Wind</h2>
 							<img
-								src="public/images/up-arrow.png"
+								src="public/up-arrow.png"
 								alt={`icon showing wind direction pointing at ${data.list[0].wind.deg} degrees`}
 								width="30"
 								style={style}
