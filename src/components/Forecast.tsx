@@ -10,15 +10,14 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 	let max: number | undefined = undefined;
 	let min: number | undefined = undefined;
 
-    const style: React.CSSProperties = {
-        filter: "invert(100%)",
-        transform: `rotate(${data.list[0].wind.deg}deg)`
-    }
+	const style: React.CSSProperties = {
+		filter: "invert(100%)",
+		transform: `rotate(${data.list[0].wind.deg}deg)`,
+	};
 
 	function maxMin(): void {
 		max = twelveHour[0].main.temp_max;
 		min = twelveHour[0].main.temp_min;
-
 
 		twelveHour.forEach((item) => {
 			if (max === undefined || min === undefined) return;
@@ -52,35 +51,33 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 							Max {max ? Math.ceil(max) : "--"}℃
 						</span>
 					</p>
-                    <p className="flex mb-4 justify-center">
-                            <div>
-                                <h2 className="py-4 capitalize">Wind</h2>
-                                <img
-                                    src="public/images/up-arrow.png"
-                                    alt={`icon showing wind direction pointing at ${data.list[0].wind.deg} degrees`}
-                                    width="30"
-                                    style={style}
-                                    />
-                            </div>
-                        </p>
-                                <p className="mb-8">
-                                      {`${Math.round(data.list[0].wind.speed)}km`}
-                                </p>    
+					<p className="flex mb-4 justify-center">
+						<div>
+							<h2 className="py-4 capitalize">Wind</h2>
+							<img
+								src="public/images/up-arrow.png"
+								alt={`icon showing wind direction pointing at ${data.list[0].wind.deg} degrees`}
+								width="30"
+								style={style}
+							/>
+						</div>
+					</p>
+					<p className="mb-8">
+						{`${Math.round(data.list[0].wind.speed)}km`}
+					</p>
 				</section>
-				<section className="flex w-full justify-center md:flex-row">
+				<section className="md:flex justify-center">
 					{twelveHour.map((item, index) => {
 						return (
 							<div
 								key={index}
-								className="flex gap-4 flex-col justify-center w-full text-center items-center bg-slate-400 rounded bg-opacity-30 py-4 mx-4 min-w-[150px]"
+								className="flex gap-4 flex-col justify-center w-full text-center items-center py-4 md:min-w-[150px]"
 							>
 								<div className="flex flex-col">
 									<h3>
 										{index === 0
 											? "Now"
-											: `${new Date(
-													item.dt * 1000
-											  ).getHours()}:00`}
+											: `${new Date(item.dt * 1000).getHours()}:00`}
 									</h3>
 									<img
 										width="70"
