@@ -10,7 +10,7 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 	let max: number | undefined = undefined;
 	let min: number | undefined = undefined;
 
-    const arrowRotation: React.CSSProperties = {
+    const style: React.CSSProperties = {
         filter: "invert(100%)",
         transform: `rotate(${data.list[0].wind.deg}deg)`
     }
@@ -52,18 +52,20 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 							Max {max ? Math.ceil(max) : "--"}℃
 						</span>
 					</p>
-                    <p className="flex mb-16 justify-center">
+                    <p className="flex mb-4 justify-center">
                             <div>
-                                <h2 className="py-4">Wind:</h2>
+                                <h2 className="py-4 capitalize">Wind</h2>
                                 <img
                                     src="public/images/up-arrow.png"
                                     alt={`icon showing wind direction pointing at ${data.list[0].wind.deg} degrees`}
                                     width="30"
-                                    style={arrowRotation}
+                                    style={style}
                                     />
-                                <p></p>    
                             </div>
                         </p>
+                                <p className="mb-8">
+                                      {`${Math.round(data.list[0].wind.speed)}km`}
+                                </p>    
 				</section>
 				<section className="flex w-full justify-center md:flex-row">
 					{twelveHour.map((item, index) => {
