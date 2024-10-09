@@ -61,6 +61,7 @@ function Forecast({ data }: ForecastProps): JSX.Element {
                                     width="30"
                                     style={arrowRotation}
                                     />
+                                <p></p>    
                             </div>
                         </p>
 				</section>
