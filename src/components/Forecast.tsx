@@ -6,7 +6,7 @@ type ForecastProps = {
 
 function Forecast({ data }: ForecastProps): JSX.Element {
 	const twelveHour = data.list.slice(0, 4);
-	console.log(twelveHour);
+
 	let max: number | undefined = undefined;
 	let min: number | undefined = undefined;
 
