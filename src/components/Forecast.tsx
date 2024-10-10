@@ -40,31 +40,16 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 						{Math.round(data.list[0].main.temp)}
 						<span className="font-light">℃</span>
 					</h2>
-					<p className="uppercase">
-						{data.list[0].weather[0].description}
-					</p>
-					<p className="flex gap-4 justify-center">
+					<div className="flex gap-4 justify-center mb-4">
 						<span className="flex gap-4">
-							Min {min ? Math.floor(min) : "--"}℃
+							<span className="font-extrabold">Min</span>
+							{min ? Math.floor(min) : "--"}℃
 						</span>
 						<span className="flex gap-4">
-							Max {max ? Math.ceil(max) : "--"}℃
+							<span className="font-extrabold">Max</span>
+							{max ? Math.ceil(max) : "--"}℃
 						</span>
-					</p>
-					<p className="flex mb-4 justify-center">
-						<div>
-							<h2 className="py-4 capitalize">Wind</h2>
-							<img
-								src="public/up-arrow.png"
-								alt={`icon showing wind direction pointing at ${data.list[0].wind.deg} degrees`}
-								width="30"
-								style={style}
-							/>
-						</div>
-					</p>
-					<p className="mb-8">
-						{`${Math.round(data.list[0].wind.speed)}km`}
-					</p>
+					</div>
 				</section>
 				<section className="md:flex justify-center">
 					{twelveHour.map((item, index) => {
@@ -77,7 +62,9 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 									<h3>
 										{index === 0
 											? "Now"
-											: `${new Date(item.dt * 1000).getHours()}:00`}
+											: `${new Date(
+													item.dt * 1000
+											  ).getHours()}:00`}
 									</h3>
 									<img
 										width="70"
@@ -87,6 +74,21 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 								</div>
 								<div className="flex uppercase text-sm font-light">
 									{item.weather[0].description}
+								</div>
+								<div className="flex flex-col justify-center items-start mb-4">
+									<div className="flex">
+										<img
+											src="/up-arrow.png"
+											alt={`Arrow pointing ${data.list[0].wind.deg} degrees`}
+											width="30"
+											style={style}
+										/>
+                                            </div>
+										<div className="flex mb-8">
+											{`${Math.round(
+												data.list[0].wind.speed
+											)}km`}
+										</div>
 								</div>
 							</div>
 						);
