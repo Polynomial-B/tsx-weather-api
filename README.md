@@ -1,5 +1,5 @@
 # Weather App
-## Brief
-I want to create a Weather App using the Openweather API.
+## Overview
+A small weather app using the openweather location and weather APIs.
 ## Build
-The app will be built using TypeScrip, React and Tailwind.
+The app was built using TypeScript, React and Tailwind.
