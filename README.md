@@ -1,5 +1,5 @@
 # Weather App
 ## Brief
-I want to create a Weather App using the Openweather API.
+Personal project to create a small weather app using JSX, TypeScript and the openweather location and weather APIs.
 ## Build
-The app will be built using TypeScrip, React and Tailwind.
+The app is being built using TypeScript, React and Tailwind.
