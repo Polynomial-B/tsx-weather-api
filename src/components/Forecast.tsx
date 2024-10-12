@@ -10,11 +10,6 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 	let max: number | undefined = undefined;
 	let min: number | undefined = undefined;
 
-	const style: React.CSSProperties = {
-		filter: "invert(100%)",
-		transform: `rotate(${data.list[0].wind.deg}deg)`,
-	};
-
 	function maxMin(): void {
 		max = twelveHour[0].main.temp_max;
 		min = twelveHour[0].main.temp_min;
@@ -79,14 +74,14 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 									<div className="flex">
 										<img
 											src="/up-arrow.png"
-											alt={`Arrow pointing ${data.list[0].wind.deg} degrees`}
+											alt={`Arrow pointing ${data.list[index].wind.deg} degrees`}
 											width="30"
-											style={style}
+											style={{filter: "invert(100%)", transform: `rotate(${data.list[index].wind.deg}deg)`}}
 										/>
                                             </div>
 										<div className="flex mb-8">
 											{`${Math.round(
-												data.list[0].wind.speed
+												data.list[index].wind.speed
 											)}km`}
 										</div>
 								</div>
