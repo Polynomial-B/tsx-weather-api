@@ -68,5 +68,5 @@ The arrow image is also rendered, with its default direction set to north (0 deg
 
 ### Styling
 
-This was my first time using Tailwind and I liked that it has a built in CSS reset, so that I could create styling elements 'from scratch'. I found it easy to pick up and it improved my workflow as I didn'y have to switch back and forth between pages. In this project I didn't set up any personalised global variants (e.g. 'primary' colour) but I would consider doing so if creating a larger pair or collaborative project.
+This was my first time using Tailwind and I liked that it has a built in CSS reset, so that I could create styling elements 'from scratch'. I found it easy to pick up and it improved my workflow as I didn't have to switch back and forth between pages. In this project I didn't set up any personalised global variants (e.g. 'primary' colour) but I would consider doing so if creating a larger pair or collaborative project.
 
