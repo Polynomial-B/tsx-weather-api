@@ -54,7 +54,7 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 								className="flex gap-4 flex-col justify-center w-full text-center items-center py-4 md:min-w-[150px]"
 							>
 								<div className="flex flex-col">
-									<h3>
+									<h3 className="text-2xl font-bold">
 										{index === 0
 											? "Now"
 											: `${new Date(
@@ -67,23 +67,26 @@ function Forecast({ data }: ForecastProps): JSX.Element {
 										alt={`icon showing ${item.weather[0].description}`}
 									/>
 								</div>
-								<div className="flex uppercase text-sm font-light">
+								<div className="flex uppercase text-sm font-light mb-5">
 									{item.weather[0].description}
 								</div>
-								<div className="flex flex-col justify-center items-start mb-4">
+								<div className="flex flex-col justify-center items-start">
 									<div className="flex">
 										<img
 											src="/up-arrow.png"
 											alt={`Arrow pointing ${data.list[index].wind.deg} degrees`}
 											width="30"
-											style={{filter: "invert(100%)", transform: `rotate(${data.list[index].wind.deg}deg)`}}
+											style={{
+												filter: "invert(100%)",
+												transform: `rotate(${data.list[index].wind.deg}deg)`,
+											}}
 										/>
-                                            </div>
-										<div className="flex mb-8">
-											{`${Math.round(
-												data.list[index].wind.speed
-											)}km`}
-										</div>
+									</div>
+									<div className="flex my-5">
+										{`${Math.round(
+											data.list[index].wind.speed
+										)}km`}
+									</div>
 								</div>
 							</div>
 						);
